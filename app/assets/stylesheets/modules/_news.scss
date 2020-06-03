@@ -1,0 +1,124 @@
+.new{
+  color: #200;
+  font-size: 32px;
+  text-align: center;
+  line-height: 60px;
+  border-bottom: solid 5px #900;
+  font-weight: bold;
+  height: 60px;
+  width: 200px;
+  margin: 10px 0 10px 220px;
+}
+.form{
+  background: linear-gradient(240deg, rgba(255, 0, 0, 0.4) , rgba(255,0,0,0) 80%),
+  linear-gradient(120deg, rgba(0,255,0,0.4), rgba(0,255,0,0) 80%),
+  linear-gradient(360deg, rgba(0,0,255,0.4), rgba(0,0,255,0) 80%);
+  height: 100%;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  &__main{
+    background-color: deepskyblue;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    &__input{
+      background-color: silver;
+      height: 500px;
+      width: 100%;
+      padding: 10px 10px 0;
+      &__title{
+        background-color: snow;
+        height: 40%;
+        width: 100%;
+        border: solid 1px black;
+        margin-bottom: 10px;
+      }
+      &__img{
+        background-color: snow;
+        height: 25%;
+        width: 100%;
+        border: solid 1px black;
+        margin-bottom: 10px;
+      }
+      &__total-pages{
+        background-color: snow;
+        height: 25%;
+        width: 100%;
+        border: solid 1px black;
+        margin-bottom: 10px;
+      }
+    }
+    &__show-img{
+      background-color: seashell;
+      height: 500px;
+      width: 420px;
+      padding: 10px;
+    }
+  }
+  &__send-btn{
+    height: 60px;
+    width: 100px;
+    color: #09f;
+    background-color: snow;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 37px;
+    border: solid 2px #0ff;
+    margin: 30px 0 8px 430px;
+  }
+}
+
+
+
+
+
+// .form
+//   .form__title
+//   .form__main
+//     .form__main__input
+//       .form__main__input__title
+//       .form__main__input__img
+//         .form__main__input__img__img-path
+//         .form__main__input__img__select-img
+//       .form__main__input__total-pages
+//     .form__main__show-img
+//   .form__send-btn
+
+
+
+
+// 書籍検索APIを用いた本の登録（インクリメンタルサーチも実装予定）
+
+// .search-results{
+//   background-color: lightblue;
+//   margin: 0 300px;
+//   &__book-info{
+//     background-color: tomato;
+//     height: 200px;
+//     border: solid 3px black;
+//     border-bottom: none;
+//     display: flex;
+//     &__img{
+//       background-color: lightslategray;
+//       height: 150px;
+//       width: 100px;
+//       margin: 30px 20px 0 80px;
+//     }
+//     &__title{
+//       background-color: lightseagreen;
+//       height: 50px;
+//       width: 400px;
+//       line-height: 200px;
+//       margin: auto 20px;
+//     }
+//     &__regist-btn{
+//       background-color: lightcoral;
+//       height: 50px;
+//       width: 80px;
+//       margin: auto 50px;
+//     }
+//   }
+// }
+

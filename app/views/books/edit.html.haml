@@ -1,0 +1,25 @@
+.header
+  .header__left
+    .header__left__user-info
+      .header__left__user-info__name
+        = current_user.name
+      .header__left__user-info__image
+
+.form
+  .form__title
+  = form_for(@book) do |n|
+    .form__main
+      .form__main__input
+        -# .form__main__input__title
+        = n.text_field :title, class: "form__main__input__title"
+        -# = f.title
+        -# .form__main__input__img
+        = n.text_field :image, class: "form__main__input__img"
+        -# = f.image
+        = n.text_field :total_page_count, class: "form__main__input__total-pages"
+        -# .form__main__input__img__img-path
+        -# .form__main__input__img__select-img
+        -# .form__main__input__total-pages
+      .form__main__show-img
+    -# .form__send-btn
+    = n.submit "Update", class: 'form__send-btn'

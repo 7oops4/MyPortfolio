@@ -1,0 +1,91 @@
+.header
+  .header__left
+    .header__left__user-info
+      .header__left__user-info__name
+        = current_user.name
+      .header__left__user-info__image
+        .fas.fa-user
+  .header__center
+  .header__right
+    = link_to new_book_path do
+      .book-regist-btn 登録
+
+
+.nav-main
+  .nav-left
+    .nav-left__title
+      %p Book&nbsp;Shelf
+    .nav-left__book-counter 総登録数：
+  .nav-right
+    .nav-right__favorite
+    .nav-right__genre
+    .nav-right__author
+
+
+.content-main
+  .bookshelf
+    .bookshelf-head
+    .bookshelf-back
+      %ul.book-list
+        = link_to book_path(@books.ids[0]) do
+          %li.book-item-block
+            .book-image
+            .book-title
+        = link_to book_path(@books.ids[1]) do
+          %li.book-item-block
+            .book-image
+            .book-title
+        = link_to book_path(@books.ids[2]) do
+          %li.book-item-block
+            .book-image
+            .book-title
+        = link_to book_path(@books.ids[3]) do
+          %li.book-item-block
+            .book-image
+            .book-title
+        = image_tag "table-clock.png", alt: "置き時計", class: "table-clock"
+    .bookshelf-floor
+
+  .bookshelf
+    .bookshelf-head
+    .bookshelf-back
+      %ul.book-list
+        %li.book-item-block
+          .book-image
+          .book-title
+        %li.book-item-block
+          .book-image
+          .book-title
+        %li.book-item-block
+          .book-image
+          .book-title
+        %li.book-item-block
+          .book-image
+          .book-title
+        = image_tag "succulent.png", alt: "多肉植物", class: "succulent"
+      .succulent
+    .bookshelf-floor
+
+  .bookshelf
+    .bookshelf-head
+    .bookshelf-back
+      %ul.book-list
+        %li.book-item-block
+          .book-image
+          .book-title
+        %li.book-item-block
+          .book-image
+          .book-title
+        %li.book-item-block
+          .book-image
+          .book-title
+        %li.book-item-block
+          .book-image
+          .book-title
+        = image_tag "cat.png", alt: "猫", class: "cat"
+    .bookshelf-floor
+
+
+.pagenate
+
+.footer

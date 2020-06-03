@@ -1,0 +1,60 @@
+.main{
+  background: linear-gradient(240deg, rgba(255, 0, 0, 0.4) , rgba(255,0,0,0) 80%),
+  linear-gradient(120deg, rgba(0,255,0,0.4), rgba(0,255,0,0) 80%),
+  linear-gradient(360deg, rgba(0,0,255,0.4), rgba(0,0,255,0) 80%);
+  height: 500px;
+  width: 1000px;
+  margin: 10px auto;
+  display: flex;
+  .book-image{
+    background-color: darkred;
+    height: 400px;
+    width: 350px;
+    margin: 30px 50px 30px 150px;
+  }
+  .book-info{
+    height: 400px;
+    width: 50%;
+    margin: 150px 0 30px 50px;
+    &__author{
+      background-color: white;
+      height: 60px;
+      width: 400px;
+      border-bottom: solid 1px gray;
+      margin-top: 20px;
+    }
+    &__publish{
+      background-color: white;
+      height: 60px;
+      width: 400px;
+      border-bottom: solid 1px gray;
+      margin-top: 20px;
+    }
+    &__genre{
+      background-color: white;
+      height: 60px;
+      width: 400px;
+      border-bottom: solid 1px gray;
+      margin-top: 20px;
+    }
+    &__registed_at{
+      background-color: white;
+      height: 60px;
+      width: 400px;
+      border-bottom: solid 1px gray;
+      margin-top: 20px;
+    }
+  }
+}
+.book-impression{
+  color: #09f;
+  background-color: snow;
+  height: 100px;
+  width: 400px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 97px;
+  border: solid 3px #0ff;
+  margin: 20px auto 0;
+}

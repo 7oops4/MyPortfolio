@@ -1,0 +1,28 @@
+.header
+  .header__left
+    .header__left__user-info
+      .header__left__user-info__name
+        = current_user.name
+      .header__left__user-info__image
+        .fas.fa-user
+  .header__center
+  .header__right
+    = link_to edit_book_path(@book.id) do
+      .book-regist-btn 編集
+
+
+.nav-main
+  .nav-left
+    .nav-left__title
+      %p 本の詳細
+    -# .nav-left__book-counter 『本のタイトル』
+
+
+.main
+  .book-image
+  .book-info
+    .book-info__author
+    .book-info__publish
+    .book-info__genre
+    .book-info__registed_at
+.book-impression 本の感想を共有
