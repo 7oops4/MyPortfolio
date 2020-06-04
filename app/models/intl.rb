@@ -1,0 +1,2 @@
+class Intl < ApplicationRecord
+end
