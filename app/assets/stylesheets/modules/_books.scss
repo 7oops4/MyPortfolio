@@ -148,6 +148,13 @@
         height: 250px;
         width: 200px;
         margin: 25px;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          opacity: 0.8;
+          height: 260px;
+          width: 210px;
+          transition: 0.2s ease-in-out;
+        }
       }
       .table-clock{
         height: 150px;
