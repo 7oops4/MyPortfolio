@@ -21,5 +21,4 @@
               = render "devise/shared/links"
       .account-page__inner--right
         .content
-          -# .g-signin2{ "data-onsuccess": "onSignIn" }
-          -# %h4 別の方法でログイン
+          = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
