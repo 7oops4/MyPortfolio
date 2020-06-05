@@ -3,4 +3,5 @@
   %br/
 - if devise_mapping.registerable? && controller_name != 'registrations'
   = link_to "アカウント作成", new_registration_path(resource_name), class: 'new_account'
+  = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
   %br/
