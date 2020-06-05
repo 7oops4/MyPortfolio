@@ -1,73 +1,78 @@
 .account-page {
-  .account-page__inner {
-    width: 980px;
-    margin: 60px auto;
-    padding: 60px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-
-    .account-page__inner--left, .account-page__inner--right {
-      float: left;
-      width: 50%;
+  background-color: linear-gradient(#253141, #071c36);
+  background: linear-gradient(#253141, #071c36);
+  background: -webkit-linear-gradient(#253141, #253141ab);
+  background: -mozlinear-gradient(#253141, #071c36);
+  background: -ms-linear-gradient(#253141, #071c36);
+  height: 100%;
+  width: 100%;
+  padding-top: 60px;
+  &__inner {
+    height: calc(100vh - 60px);
+    width: 700px;
+    color: #253141;
+    margin: 0 auto;
+    form{
+      display: flex;
     }
-    &:after {
-      clear: both;
-      content: "";
-      display: block;
+    &--left{
+      background-color: snow;
+      height: 450px;
+      width: 348px;
+      border-right: solid 2px #ababab;
+      border-radius: 3%;
     }
-  }
-
-  .account-page__header {
-    h2 {
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-      font-size: 40px;
-      font-weight: 200;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 60px;
-        margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
-      }
-    }
-
-    h5 {
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 200;
-    }
-
-    .btn {
-      margin-top: 20px;
-      color: #fff;
-      background-color: #ccc;
-      font-size: 14px;
+    &--right{
+      background-color: snow;
+      height: 450px;
+      width: 348px;
+      font-size: 16px;
+      border-left: solid 2px #ababab;
+      border-radius: 3%;
     }
   }
 
+  h2 {
+    color: snow;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+    font-size: 48px;
+    font-weight: 200;
+    font-family: serif;
+    text-align: center;
+  }
+  h4 {
+    margin: 20px;
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
   .field {
     margin-bottom: 10px;
-
     .field-label {
-      padding: 10px 0;
+      margin: 20px 10px 10px;
+      padding: 20px 0;
       letter-spacing: 1px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 200;
-
       i {
-        font-size: 11px;
+        font-size: 16px;
       }
     }
-
     .field-input {
-      input {
-        width: 100%;
-        padding: 10px;
-        letter-spacing: 1px;
-      }
+      border-bottom: solid 3px #253141;
+      margin: 10px;
+      // transform: scale(0, 1);
+      // transform-origin: left top;
+      // transition: transform .3s;
+      // &:hover {
+      //   transform: scale(1, 1);
+      // }
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      letter-spacing: 1px;
     }
   }
 
@@ -75,20 +80,23 @@
     display: inline-block;
     height: 50px;
     padding: 0 30px;
-    line-height: 50px;
     letter-spacing: 1px;
     text-align: center;
     border: none;
     border-radius: 2px;
   }
-
   input[type='submit'] {
-    float: left;
-    margin-top: 20px;
+    width: 250px;
+    margin: 40px 0 0 48px;
     color: #fff;
     background-color: #38aef0;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.7;
+      transition: 0.2s ease-in-out;
+    }
   }
-
   .field-label {
     .field_with_errors {
       display: inline-block;
@@ -96,11 +104,9 @@
       font-weight: 400;
     }
   }
-
   .field-input {
     .field_with_errors {
       position: relative;
-
       &:after {
         content: '';
         display: block;
@@ -111,6 +117,38 @@
         width: 5px;
         background-color: #d65f4c;
       }
+    }
+  }
+}
+
+.actions{
+  margin: 20px auto;
+}
+
+.login-btn{
+  height: 50px;
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  a{
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.6;
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
+
+.new-btn{
+  height: 50px;
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  a{
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.6;
+      transition: 0.2s ease-in-out;
     }
   }
 }

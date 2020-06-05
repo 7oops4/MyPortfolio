@@ -1,8 +1,10 @@
 !!!
 %html
   %head
+    %script{ type: 'text/javascript', src: 'https://apis.google.com/js/platform.js', async: '', defer: ''}
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-    %title BookConect
+    %meta{content: "950054303130-id5lucf417v82st1b6nsmv8k3tqffask.apps.googleusercontent.com", name: "google-signin-client_id"}/
+    %title BookConnect
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
