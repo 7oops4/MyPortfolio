@@ -21,4 +21,4 @@
               = render "devise/shared/links"
       .account-page__inner--right
         .content
-          = render "devise/shared/links"
+          = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
