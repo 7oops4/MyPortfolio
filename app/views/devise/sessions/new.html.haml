@@ -20,5 +20,7 @@
             .new-btn
               = render "devise/shared/links"
       .account-page__inner--right
+        -# .fb-root
         .content
-          = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
+        -# .fb-login-button{"data-auto-logout-link" => "false", "data-button-type" => "login_with", "data-layout" => "rounded", "data-size" => "medium", "data-use-continue-as" => "false", "data-width" => ""}
+        -# = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
