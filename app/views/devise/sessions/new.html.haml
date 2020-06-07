@@ -24,4 +24,4 @@
         .content
         -# .fb-login-button{"data-auto-logout-link" => "false", "data-button-type" => "login_with", "data-layout" => "rounded", "data-size" => "medium", "data-use-continue-as" => "false", "data-width" => ""}
         -# = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
-        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: 'google-btn'
+        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path(:google_oauth2), class: 'google-btn'
