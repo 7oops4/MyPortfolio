@@ -1,48 +1,55 @@
 .main{
-  background: linear-gradient(240deg, rgba(255, 0, 0, 0.4) , rgba(255,0,0,0) 80%),
-  linear-gradient(120deg, rgba(0,255,0,0.4), rgba(0,255,0,0) 80%),
-  linear-gradient(360deg, rgba(0,0,255,0.4), rgba(0,0,255,0) 80%);
+  background: linear-gradient(#253141e5, #2531418e);
   height: 500px;
-  width: 1000px;
+  width: 850px;
   margin: 10px auto;
   display: flex;
   .book-image{
-    background-color: darkred;
-    height: 400px;
-    width: 350px;
-    margin: 30px 50px 30px 150px;
+    background-color: snow;
+    height: 420px;
+    width: 300px;
+    margin: 40px 25px;
+    padding: 38px 23px;
+    border: solid 2px #253141;
   }
   .book-info{
     height: 400px;
-    width: 50%;
-    margin: 150px 0 30px 50px;
+    width: 500px;
+    padding: 30px 30px 0 0;
     &__author{
-      background-color: white;
-      height: 60px;
-      width: 400px;
-      border-bottom: solid 1px gray;
-      margin-top: 20px;
+      color: #fff;
+      height: 50px;
+      width: 100%;
+      border-bottom: solid 3px #253141;
+      margin: 50px auto 20px;
+      letter-spacing: 1px;
     }
     &__publish{
-      background-color: white;
-      height: 60px;
-      width: 400px;
-      border-bottom: solid 1px gray;
-      margin-top: 20px;
+      // background-color: snow;
+      color: #fff;
+      height: 50px;
+      width: 100%;
+      border-bottom: solid 3px #253141;
+      margin: 50px auto 20px;
+      letter-spacing: 1px;
     }
     &__genre{
-      background-color: white;
-      height: 60px;
-      width: 400px;
-      border-bottom: solid 1px gray;
-      margin-top: 20px;
+      // background-color: snow;
+      color: #fff;
+      height: 50px;
+      width: 100%;
+      border-bottom: solid 3px #253141;
+      margin: 50px auto 20px;
+      letter-spacing: 1px;
     }
     &__registed_at{
-      background-color: white;
-      height: 60px;
-      width: 400px;
-      border-bottom: solid 1px gray;
-      margin-top: 20px;
+      // background-color: snow;
+      color: #fff;
+      height: 50px;
+      width: 100%;
+      border-bottom: solid 3px #253141;
+      margin: 50px auto 20px;
+      letter-spacing: 1px;
     }
   }
 }

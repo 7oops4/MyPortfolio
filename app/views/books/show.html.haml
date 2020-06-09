@@ -19,10 +19,18 @@
 
 
 .main
-  .book-image
+  = image_tag "book.jpg", alt: "本の画像", class: "book-image"
   .book-info
     .book-info__author
+      %h3 タイトル
+      %p 安宅和人
     .book-info__publish
+      %h3 出版社
+      %p 英治出版
     .book-info__genre
+      %h3 ジャンル
+      %p 不明
     .book-info__registed_at
+      %h3 登録日
+      %p 2020年6月8日
 .book-impression 本の感想を共有
