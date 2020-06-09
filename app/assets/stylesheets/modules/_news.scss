@@ -10,50 +10,51 @@
   margin: 10px 0 10px 220px;
 }
 .form{
-  background: linear-gradient(240deg, rgba(255, 0, 0, 0.4) , rgba(255,0,0,0) 80%),
-  linear-gradient(120deg, rgba(0,255,0,0.4), rgba(0,255,0,0) 80%),
-  linear-gradient(360deg, rgba(0,0,255,0.4), rgba(0,0,255,0) 80%);
+  background: linear-gradient(#253141dc, #25314150);
   height: 100%;
   width: 1000px;
   margin: 0 auto;
   padding: 20px;
   &__main{
-    background-color: deepskyblue;
-    height: 70%;
+    height: 100%;
     width: 100%;
     display: flex;
     &__input{
-      background-color: silver;
+      background-color: snow;
       height: 500px;
-      width: 100%;
-      padding: 10px 10px 0;
+      width: 650px;
+      padding: 30px 10px 0;
       &__title{
         background-color: snow;
-        height: 40%;
+        height: 50px;
         width: 100%;
-        border: solid 1px black;
-        margin-bottom: 10px;
+        border-bottom: solid 3px #253141;
+        margin: 50px auto 20px;
+        letter-spacing: 1px;
       }
       &__img{
         background-color: snow;
-        height: 25%;
+        height: 50px;
         width: 100%;
-        border: solid 1px black;
-        margin-bottom: 10px;
+        border-bottom: solid 3px #253141;
+        margin: 50px auto 20px;
+        letter-spacing: 1px;
       }
       &__total-pages{
         background-color: snow;
-        height: 25%;
-        width: 100%;
-        border: solid 1px black;
-        margin-bottom: 10px;
+        height: 50px;
+        width: 50%;
+        border-bottom: solid 3px #253141;
+        margin: 50px auto 20px;
+        letter-spacing: 1px;
       }
     }
     &__show-img{
-      background-color: seashell;
+      background-color: snow;
       height: 500px;
-      width: 420px;
-      padding: 10px;
+      width: 350px;
+      padding: 38px 23px;
+      border: solid 2px #253141;
     }
   }
   &__send-btn{

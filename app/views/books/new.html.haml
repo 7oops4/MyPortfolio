@@ -11,6 +11,7 @@
 .form
   = form_for @book do |f|
     .form__main
+      = image_tag "book.jpg", alt: "本の画像", class: "form__main__show-img"
       .form__main__input
         -# .form__main__input__title
         = f.text_field :title, class: "form__main__input__title", placeholder: "本のタイトルを登録してください"
@@ -20,7 +21,6 @@
         -# .form__main__input__img__img-path
         -# .form__main__input__img__select-img
         -# .form__main__input__total-pages
-      .form__main__show-img
     -# .form__send-btn
     = f.submit 'Send', class: 'form__send-btn'
 

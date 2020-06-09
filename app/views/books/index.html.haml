@@ -17,73 +17,98 @@
       %p Book&nbsp;Shelf
     .nav-left__book-counter 総登録数：
   .nav-right
-    .nav-right__favorite
-    .nav-right__genre
-    .nav-right__author
+    -# .nav-right__favorite お気に入り
+    -# .nav-right__genre ジャンル
+    -# .nav-right__author 著者
 
 
 .content-main
   .bookshelf
-    .bookshelf-head
-    .bookshelf-back
-      %ul.book-list
-        = link_to book_path(@books.ids[0]) do
-          %li.book-item-block
-            .book-image
-            .book-title
-        = link_to book_path(@books.ids[1]) do
-          %li.book-item-block
-            .book-image
-            .book-title
-        = link_to book_path(@books.ids[2]) do
-          %li.book-item-block
-            .book-image
-            .book-title
-        = link_to book_path(@books.ids[3]) do
-          %li.book-item-block
-            .book-image
-            .book-title
-        = image_tag "table-clock.png", alt: "置き時計", class: "table-clock"
-    .bookshelf-floor
+    .bookshelf-record
+      .bookshelf-head
+      .bookshelf-back
+        %ul.book-list
+          = link_to book_path(@books.ids[0]) do
+            %li.book-item-block
+              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+              .book-item-block__nav
+                .book-item-block__nav__title ウェブサイトの...
+                .book-item-block__nav__pages 20/1000
+          = link_to book_path(@books.ids[1]) do
+            %li.book-item-block
+              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+              .book-item-block__nav
+                .book-item-block__nav__title ウェブサイトの...
+                .book-item-block__nav__pages 20/1000
+          = link_to book_path(@books.ids[2]) do
+            %li.book-item-block
+              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+              .book-item-block__nav
+                .book-item-block__nav__title ウェブサイトの...
+                .book-item-block__nav__pages 20/1000
+          = link_to book_path(@books.ids[3]) do
+            %li.book-item-block
+              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+              .book-item-block__nav
+                .book-item-block__nav__title ウェブサイトの...
+                .book-item-block__nav__pages 20/1000
+          = image_tag "table-clock.png", alt: "置き時計", class: "table-clock"
+      .bookshelf-floor
 
-  .bookshelf
-    .bookshelf-head
-    .bookshelf-back
-      %ul.book-list
-        %li.book-item-block
-          .book-image
-          .book-title
-        %li.book-item-block
-          .book-image
-          .book-title
-        %li.book-item-block
-          .book-image
-          .book-title
-        %li.book-item-block
-          .book-image
-          .book-title
-        = image_tag "succulent.png", alt: "多肉植物", class: "succulent"
-      .succulent
-    .bookshelf-floor
+    .bookshelf-record
+      .bookshelf-head
+      .bookshelf-back
+        %ul.book-list
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          = image_tag "succulent.png", alt: "多肉植物", class: "succulent"
+        -# .succulent
+      .bookshelf-floor
 
-  .bookshelf
-    .bookshelf-head
-    .bookshelf-back
-      %ul.book-list
-        %li.book-item-block
-          .book-image
-          .book-title
-        %li.book-item-block
-          .book-image
-          .book-title
-        %li.book-item-block
-          .book-image
-          .book-title
-        %li.book-item-block
-          .book-image
-          .book-title
-        = image_tag "cat.png", alt: "猫", class: "cat"
-    .bookshelf-floor
+    .bookshelf-record
+      .bookshelf-head
+      .bookshelf-back
+        %ul.book-list
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          %li.book-item-block
+            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title ウェブサイトの...
+              .book-item-block__nav__pages 20/1000
+          = image_tag "cat.png", alt: "猫", class: "cat"
+      .bookshelf-floor
 
 
 .pagenate
