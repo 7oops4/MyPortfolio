@@ -16,35 +16,13 @@
       content: "";
       display: block;
     }
-  }
-
-  .account-page__header {
-    h2 {
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-      font-size: 40px;
-      font-weight: 200;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 60px;
-        margin-top: 5px;
-        border-bottom: 1px solid #900;
-      }
-    }
-
-    h5 {
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 200;
-    }
-
-    .btn {
-      margin-top: 20px;
-      color: #fff;
-      background-color: #ccc;
-      font-size: 14px;
+    &--right{
+      background-color: snow;
+      height: 450px;
+      width: 348px;
+      font-size: 16px;
+      border-left: solid 2px #ababab;
+      border-radius: 3%;
     }
   }
 

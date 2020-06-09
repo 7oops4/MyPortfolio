@@ -1,11 +1,9 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 ログイン
-      %h5 登録しているユーザーでログイン
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+.account-page
+  %h2 Book Connect
+  .account-page__inner
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
+      .account-page__inner--left
         .field
           .field-label
             = f.label :email
@@ -19,3 +17,11 @@
               = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "ログイン", class: 'btn'
+            .new-btn
+              = render "devise/shared/links"
+      .account-page__inner--right
+        -# .fb-root
+        .content
+        -# .fb-login-button{"data-auto-logout-link" => "false", "data-button-type" => "login_with", "data-layout" => "rounded", "data-size" => "medium", "data-use-continue-as" => "false", "data-width" => ""}
+        -# = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
+        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: 'google-btn', method: :post
