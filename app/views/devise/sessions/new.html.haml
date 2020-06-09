@@ -22,6 +22,7 @@
       .account-page__inner--right
         -# .fb-root
         .content
-        -# .fb-login-button{"data-auto-logout-link" => "false", "data-button-type" => "login_with", "data-layout" => "rounded", "data-size" => "medium", "data-use-continue-as" => "false", "data-width" => ""}
-        -# = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'
-        = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: 'google-btn', method: :post
+          = image_tag "google_icon.png", alt: "Googleアイコン", class: "google-icon"
+          = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: 'google-btn', method: :post
+          -# .fb-login-button{"data-auto-logout-link" => "false", "data-button-type" => "login_with", "data-layout" => "rounded", "data-size" => "medium", "data-use-continue-as" => "false", "data-width" => ""}
+          -# = link_to "Facebookでログイン", user_facebook_omniauth_callback_path, class: 'facebook-btn'

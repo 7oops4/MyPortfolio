@@ -54,7 +54,20 @@
       font-weight: bold;
       text-align: center;
       line-height: 37px;
-      margin: 5px 40px;
+      margin: 5px 20px;
+      border: solid 2px #0ff;
+      float: right;
+    }
+    .logout-btn{
+      height: 40px;
+      width: 100px;
+      color: #09f;
+      background-color: snow;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 37px;
+      margin: 5px 20px;
       border: solid 2px #0ff;
       float: right;
     }
