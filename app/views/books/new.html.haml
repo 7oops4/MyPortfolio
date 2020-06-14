@@ -2,53 +2,23 @@
   .header__left
     .header__left__user-info
       .header__left__user-info__name
-        = current_user.name
+        = link_to current_user.name, root_path
       .header__left__user-info__image
         .fas.fa-user
+  -# .header__center
+  .header__right
 
 .new 本の登録
 
 .form
   = form_for @book do |f|
     .form__main
-      = image_tag "book.jpg", alt: "本の画像", class: "form__main__show-img"
+      -if @book[:image] != nil
+        = image_tag @book[:image], alt: "本の画像", class: "form__main__show-img"
+      - else
+        = image_tag "no_image.jpg", alt: "本の画像", class: "form__main__show-img"
       .form__main__input
-        -# .form__main__input__title
         = f.text_field :title, class: "form__main__input__title", placeholder: "本のタイトルを登録してください"
-        -# .form__main__input__img
-        = f.text_field :image, class: "form__main__input__img", placeholder: "本の画像を登録してください"
+        = f.text_field :image, class: "form__main__input__img", placeholder: "本の画像URLを登録してください"
         = f.text_field :total_page_count, class: "form__main__input__total-pages", placeholder: "本の総ページ数を登録してください"
-        -# .form__main__input__img__img-path
-        -# .form__main__input__img__select-img
-        -# .form__main__input__total-pages
-    -# .form__send-btn
-    = f.submit 'Send', class: 'form__send-btn'
-
-
--# 書籍検索APIを用いた本の登録（インクリメンタルサーチも実装予定）
-
--# .search-results
--#   .search-results__book-info
--#     .search-results__book-info__img
--#     .search-results__book-info__title
--#     .search-results__book-info__regist-btn
-
--#   .search-results__book-info
--#     .search-results__book-info__img
--#     .search-results__book-info__title
--#     .search-results__book-info__regist-btn
-
--#   .search-results__book-info
--#     .search-results__book-info__img
--#     .search-results__book-info__title
--#     .search-results__book-info__regist-btn
-
--#   .search-results__book-info
--#     .search-results__book-info__img
--#     .search-results__book-info__title
--#     .search-results__book-info__regist-btn
-
--#   .search-results__book-info
--#     .search-results__book-info__img
--#     .search-results__book-info__title
--#     .search-results__book-info__regist-btn
+    = f.submit '登録', class: 'form__send-btn'

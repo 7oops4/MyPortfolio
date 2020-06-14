@@ -1,0 +1,37 @@
+.header
+  .header__left
+    .header__left__user-info
+      .header__left__user-info__name
+        = link_to current_user.name, root_path
+      .header__left__user-info__image
+        .fas.fa-user
+%h3.text-center Book&nbsp;Finder
+.search-area
+  .search-form
+    = form_with model: @search_form, url: new_books_search_path, local: true, scope: :q, method: :get do |f|
+      .search-form-area
+        .search-form-area__main-content
+          = f.label :keyword, 'Search : '
+          = f.text_field :keyword, class: 'form_search', value: @search_form.keyword, placeholder: "検索する本に関するキーワードを入力してください"
+        %button{:type => "submit"}
+          %i.fas.fa-search.fa-2x
+  .search-result
+    - @results.each do |result|
+      = form_for @result, :url => {controller: "searches", action: "create"} do |r|
+        .search-result__item
+          -if result[:image] != nil
+            = image_tag result[:image], alt: "検索した本の画像", class: "search-result__item__image"
+          - else
+            = image_tag "no_image.jpg", alt: "検索した本の画像", class: "search-result__item__image"
+          .search-result__item__info
+            .search-result__item__info__title
+              = result[:title]
+            .regist_btn
+              %p
+                = r.text_field :googlebooksapi_id, :type => "hidden", :value => result[:googlebooksapi_id]
+                = r.text_field :title, :type => "hidden", :value => result[:title]
+                = r.text_field :image, :type => "hidden", :value => result[:image]
+                = r.text_field :author, :type => "hidden", :value => result[:author]
+                = r.text_field :published_at, :type => "hidden", :value => result[:publisher]
+                = r.number_field :total_page_count, :type => "hidden", :value => result[:total_page_count]
+              %input{:type => "submit", :value => "登録"}/

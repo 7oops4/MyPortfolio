@@ -40,11 +40,62 @@
   }
   &__center{
     width: 50%;
-    background-color: red;
+    border-radius: 20px;
+    color: $side_blue_dark;
+    background-color: snow;
+    margin: 5px;
     padding: 5px;
+    display: flex;
+    justify-content: center;
+    i{
+      height: 20px;
+      width: 20px;
+      text-align: center;
+      line-height: 30px;
+      color: $side_blue_dark;
+      // margin: 10px;
+    }
+    input{
+      height: 100%;
+      width: 90%;
+      padding: 5px 10px;
+    }
+    &__new{
+      width: 100%;
+      hwight: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: $side_blue_dark;
+    }
   }
   &__right{
     width: 30%;
+    .book-keyword_search-btn{
+      height: 40px;
+      width: 130px;
+      color: #09f;
+      background-color: snow;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 37px;
+      margin: 5px 20px 5px 0;
+      border: solid 2px #09f;
+      float: right;
+    }
+    .deleat-btn{
+      height: 40px;
+      width: 70px;
+      color: #09f;
+      background-color: snow;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 37px;
+      margin: 5px 20px 5px 0;
+      border: solid 2px #09f;
+      float: right;
+    }
     .book-regist-btn{
       height: 40px;
       width: 70px;
@@ -55,7 +106,7 @@
       text-align: center;
       line-height: 37px;
       margin: 5px 20px;
-      border: solid 2px #0ff;
+      border: solid 2px #09f;
       float: right;
     }
     .logout-btn{
@@ -67,8 +118,8 @@
       font-weight: bold;
       text-align: center;
       line-height: 37px;
-      margin: 5px 20px;
-      border: solid 2px #0ff;
+      margin: 5px 20px 5px 0;
+      border: solid 2px #09f;
       float: right;
     }
   }
@@ -120,29 +171,30 @@
       width: 96px;
       margin-right: 30px;
       color: #09f;
-      border: solid 2px #0ff;
+      border: solid 2px #09f;
     }
     &__genre{
       height: 100%;
       width: 96px;
       margin-right: 30px;
       color: #09f;
-      border: solid 2px #0ff;
+      border: solid 2px #09f;
     }
     &__author{
       height: 100%;
       width: 96px;
       margin-right: 30px;
       color: #09f;
-      border: solid 2px #0ff;
+      border: solid 2px #09f;
     }
   }
 }
 
-.content-main{
-  height: calc(100% - 50px);
+.book-content{
+  height: 100%;
   width: 100%;
   background-color: snow;
+  position: relative;
   .bookshelf{
     border-radius: 5px;
     margin: 0 70px;
@@ -159,57 +211,6 @@
         height: 250px;
         width: 100%;
       }
-      .book-list{
-        height: 300px;
-        z-index: 2;
-        display: flex;
-        .book-item-block{
-          background-color: snow;
-          height: 280px;
-          width: 200px;
-          margin: 0 25px 25px;
-          transition: 0.2s ease-in-out;
-          &:hover {
-            transform: scale(1.1);
-            transition: 0.3s ease-in-out;
-          }
-        &__image{
-          height: 225px;
-          width: 160px;
-          margin: 15px 20px 0;
-        }
-        &__nav{
-          height: 40px;
-          width: 100%;
-          text-align: center;
-          line-height: 40px;
-          display: flex;
-          &__title{
-            width: 70%;
-            font-size: 16px;
-          }
-          &__pages{
-            width: 30%;
-            font-size: 12px;
-          }
-        }
-        }
-        .table-clock{
-          height: 150px;
-          width: 200px;
-          margin: 125px 0 0;
-        }
-        .succulent{
-          height: 150px;
-          width: 200px;
-          margin: 150px 0 0;
-        }
-        .cat{
-          height: 200px;
-          width: 200px;
-          margin: 125px 0 0;
-        }
-      }
       .bookshelf-floor{
         background-color: #100;
         height: 50px;
@@ -217,14 +218,72 @@
       }
     }
   }
+  &__list{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &__shelf{
+      height: 300px;
+      padding: 80px 100px 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  .book-item-block{
+    background-color: snow;
+    height: 280px;
+    width: 200px;
+    margin: 0 23px 100px;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s ease-in-out;
+    }
+  &__image{
+    height: 225px;
+    width: 160px;
+    margin: 15px 20px 0;
+  }
+  &__nav{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    display: flex;
+    &__title{
+      width: 100%;
+      font-size: 14px;
+      padding: 0 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &__pages{
+      width: 30%;
+      font-size: 12px;
+    }
+  }
+  .hidden{
+    height: 0;
+    width: 0;
+  }
+  }
 }
 
-
 .footer{
-  height: 50px;
+  color: rgba(255, 255, 255, 0.288);
+  height: 100px;
   width: 100%;
   background-color: $side_blue_dark;
-  color: #ffffff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 16px;
   margin-top: auto;
 }
 

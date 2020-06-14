@@ -23,7 +23,9 @@
       background-color: snow;
       height: 500px;
       width: 650px;
-      padding: 30px 10px 0;
+      padding: 28px 8px 0;
+      border: solid 2px #253141;
+      border-left: none;
       &__title{
         background-color: snow;
         height: 50px;
@@ -66,60 +68,7 @@
     font-weight: bold;
     text-align: center;
     line-height: 37px;
-    border: solid 2px #0ff;
+    border: solid 2px #09f;
     margin: 30px 0 8px 430px;
   }
 }
-
-
-
-
-
-// .form
-//   .form__title
-//   .form__main
-//     .form__main__input
-//       .form__main__input__title
-//       .form__main__input__img
-//         .form__main__input__img__img-path
-//         .form__main__input__img__select-img
-//       .form__main__input__total-pages
-//     .form__main__show-img
-//   .form__send-btn
-
-
-
-
-// 書籍検索APIを用いた本の登録（インクリメンタルサーチも実装予定）
-
-// .search-results{
-//   background-color: lightblue;
-//   margin: 0 300px;
-//   &__book-info{
-//     background-color: tomato;
-//     height: 200px;
-//     border: solid 3px black;
-//     border-bottom: none;
-//     display: flex;
-//     &__img{
-//       background-color: lightslategray;
-//       height: 150px;
-//       width: 100px;
-//       margin: 30px 20px 0 80px;
-//     }
-//     &__title{
-//       background-color: lightseagreen;
-//       height: 50px;
-//       width: 400px;
-//       line-height: 200px;
-//       margin: auto 20px;
-//     }
-//     &__regist-btn{
-//       background-color: lightcoral;
-//       height: 50px;
-//       width: 80px;
-//       margin: auto 50px;
-//     }
-//   }
-// }
-

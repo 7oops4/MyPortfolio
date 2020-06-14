@@ -2,27 +2,18 @@
   .header__left
     .header__left__user-info
       .header__left__user-info__name
-        = current_user.name
+        = link_to current_user.name, root_path
       .header__left__user-info__image
         .fas.fa-user
 
 .new 本情報の編集
 
 .form
-  .form__title
-  = form_for(@book) do |n|
+  = form_for @book do |e|
     .form__main
-      .form__main__show-img
+      = image_tag @book[:image], alt: "本の画像", class: "form__main__show-img"
       .form__main__input
-        -# .form__main__input__title
-        = n.text_field :title, class: "form__main__input__title"
-        -# = f.title
-        -# .form__main__input__img
-        = n.text_field :image, class: "form__main__input__img"
-        -# = f.image
-        = n.text_field :total_page_count, class: "form__main__input__total-pages"
-        -# .form__main__input__img__img-path
-        -# .form__main__input__img__select-img
-        -# .form__main__input__total-pages
-    -# .form__send-btn
-    = n.submit "Update", class: 'form__send-btn'
+        = e.text_field :title, class: "form__main__input__title"
+        = e.text_field :image, class: "form__main__input__img"
+        = e.text_field :total_page_count, class: "form__main__input__total-pages"
+    = e.submit "編集", class: 'form__send-btn'

@@ -1,0 +1,15 @@
+.notification {
+  .notice {
+    background-color: $light_blue;
+    color: $side_blue_dark;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .alert {
+    background-color: $alert_red;
+    color: $side_blue_dark;
+    text-align: center;
+    padding: 10px 0;
+  }
+}

@@ -2,116 +2,58 @@
   .header__left
     .header__left__user-info
       .header__left__user-info__name
-        = current_user.name
+        = link_to current_user.name, root_path
       .header__left__user-info__image
         .fas.fa-user
   .header__center
+    %i.fas.fa-search.fa-lg
+    %input{:type => "text", placeholder: "Search"}
   .header__right
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
+    = link_to new_books_search_path do
+      .book-keyword_search-btn キーワード検索
     = link_to new_book_path do
       .book-regist-btn 登録
-
 
 .nav-main
   .nav-left
     .nav-left__title
       %p Book&nbsp;Shelf
-    .nav-left__book-counter 総登録数：
+    .nav-left__book-counter
+      総登録数：
+      = @books.ids.length
+      冊
   .nav-right
     -# .nav-right__favorite お気に入り
     -# .nav-right__genre ジャンル
     -# .nav-right__author 著者
 
-
-.content-main
+.book-content
   .bookshelf
     .bookshelf-record
       .bookshelf-head
       .bookshelf-back
-        %ul.book-list
-          = link_to book_path(@books.ids[0]) do
-            %li.book-item-block
-              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-              .book-item-block__nav
-                .book-item-block__nav__title ウェブサイトの...
-                .book-item-block__nav__pages 20/1000
-          = link_to book_path(@books.ids[1]) do
-            %li.book-item-block
-              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-              .book-item-block__nav
-                .book-item-block__nav__title ウェブサイトの...
-                .book-item-block__nav__pages 20/1000
-          = link_to book_path(@books.ids[2]) do
-            %li.book-item-block
-              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-              .book-item-block__nav
-                .book-item-block__nav__title ウェブサイトの...
-                .book-item-block__nav__pages 20/1000
-          = link_to book_path(@books.ids[3]) do
-            %li.book-item-block
-              = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-              .book-item-block__nav
-                .book-item-block__nav__title ウェブサイトの...
-                .book-item-block__nav__pages 20/1000
-          = image_tag "table-clock.png", alt: "置き時計", class: "table-clock"
       .bookshelf-floor
 
-    .bookshelf-record
-      .bookshelf-head
-      .bookshelf-back
-        %ul.book-list
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          = image_tag "succulent.png", alt: "多肉植物", class: "succulent"
-        -# .succulent
-      .bookshelf-floor
+      .bookshelf-record
+        .bookshelf-head
+        .bookshelf-back
+        .bookshelf-floor
 
-    .bookshelf-record
-      .bookshelf-head
-      .bookshelf-back
-        %ul.book-list
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          %li.book-item-block
-            = image_tag "book.jpg", alt: "本の画像", class: "book-item-block__image"
-            .book-item-block__nav
-              .book-item-block__nav__title ウェブサイトの...
-              .book-item-block__nav__pages 20/1000
-          = image_tag "cat.png", alt: "猫", class: "cat"
-      .bookshelf-floor
+      .bookshelf-record
+        .bookshelf-head
+        .bookshelf-back
+        .bookshelf-floor
 
+  .book-content__list
+    %ul.book-content__list__shelf
+      - @books.each do |book|
+        = link_to book_path(book) do
+          %li.book-item-block
+            = image_tag book[:image], alt: "本の画像", class: "book-item-block__image"
+            .book-item-block__nav
+              .book-item-block__nav__title
+                = book[:title]
+              -# .book-item-block__nav__pages 20/1000
 
-.pagenate
-
-.footer
+.footer Copyright © BOOK Connect. All rights reserved

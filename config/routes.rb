@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   # root 'books#show'
   root 'books#index'
   resources :users, only: [:edit, :update]
-  resources :books, only: [:index, :new, :create, :edit, :update, :show]
+  namespace :books do
+    resources :searches, only: [:new, :create]
+  end
+  resources :books
 end

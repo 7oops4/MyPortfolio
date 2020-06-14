@@ -2,35 +2,38 @@
   .header__left
     .header__left__user-info
       .header__left__user-info__name
-        = current_user.name
+        = link_to current_user.name, root_path
       .header__left__user-info__image
         .fas.fa-user
-  .header__center
+  .header__center__new
   .header__right
+    = link_to "/books/#{@book.id}", method: :delete do
+      .deleat-btn 削除
     = link_to edit_book_path(@book.id) do
       .book-regist-btn 編集
 
-
-.nav-main
-  .nav-left
-    .nav-left__title
-      %p 本の詳細
-    -# .nav-left__book-counter 『本のタイトル』
-
+.show 本の詳細
 
 .main
-  = image_tag "book.jpg", alt: "本の画像", class: "book-image"
+  -if @book[:image] != nil
+    = image_tag @book[:image], alt: "本の画像", class: "book-image"
+  - else
+    = image_tag "no_image.jpg", alt: "本の画像", class: "book-image"
   .book-info
+    %h4 タイトル
+    %p
+      = @book[:title]
+    %h4 著者
     .book-info__author
-      %h3 タイトル
-      %p 安宅和人
+      %p
+        = @book[:author]
+    %h4 出版社
     .book-info__publish
-      %h3 出版社
-      %p 英治出版
-    .book-info__genre
-      %h3 ジャンル
-      %p 不明
+      %p
+        = @book[:published_at]
+    %h4 登録日
     .book-info__registed_at
-      %h3 登録日
-      %p 2020年6月8日
+      %p
+        = @book[:created_at].strftime('%Y/%m/%d')
+
 .book-impression 本の感想を共有
