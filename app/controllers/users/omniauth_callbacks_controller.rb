@@ -2,7 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   # # callback for facebook
   # def facebook
-  #   callback_for(:facebook)z
+  #   callback_for(:facebook)
   # end
 
   # # callback for twitter
@@ -18,7 +18,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # common callback method
   def callback_for(provider)
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    binding.pry
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
