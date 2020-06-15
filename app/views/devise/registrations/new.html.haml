@@ -14,6 +14,7 @@
             = f.label :email
           .field-input
             = f.email_field :email
+        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: 'facebook-btn', method: :post
       .account-page__inner--right
         .field
           .field-label
