@@ -14,7 +14,11 @@
             = f.label :email
           .field-input
             = f.email_field :email
-        = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, class: 'facebook-btn', method: :post
+          .facebook-btn
+            = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
+          .content
+            = image_tag "google_icon.png", alt: "Googleアイコン", class: "google-icon"
+            = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: 'google-btn', method: :post
       .account-page__inner--right
         .field
           .field-label
@@ -31,5 +35,4 @@
           .actions
             = f.submit "アカウント作成", class: 'btn'
             .login-btn
-              = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: 'google-btn', method: :post
-              -# = render "devise/shared/links"
+              = render "devise/shared/links"
