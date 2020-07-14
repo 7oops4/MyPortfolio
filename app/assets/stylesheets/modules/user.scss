@@ -128,8 +128,8 @@
   .field {
     margin-bottom: 10px;
     .field-label {
-      margin: 20px 10px 10px;
-      padding: 20px 0;
+      margin: 10px 10px 5px;
+      padding: 15px 0;
       letter-spacing: 1px;
       font-size: 16px;
       font-weight: 200;
@@ -140,6 +140,7 @@
     .field-input {
       border-bottom: solid 3px #253141;
       margin: 10px;
+      margin-bottom: 30px;
       // transform: scale(0, 1);
       // transform-origin: left top;
       // transition: transform .3s;
@@ -149,8 +150,20 @@
     }
     input {
       width: 100%;
-      padding: 10px;
+      padding: 5px;
       letter-spacing: 1px;
+    }
+    .account-page_error{
+      color: red;
+      height: 20px;
+      width: 100%;
+      margin: 0 10px;
+    }
+    .account-page_match-error{
+      color: red;
+      height: 20px;
+      width: 100%;
+      margin: 0 10px;
     }
   }
 

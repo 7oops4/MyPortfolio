@@ -1,19 +1,21 @@
 .account-page
   %h2 Book Connect
   .account-page__inner
+    - resource = User.new unless resource
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = devise_error_messages!
       .account-page__inner--left
         .field
           .field-label
             = f.label :name
           .field-input
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, autofocus: true, class: "required"
         .field
           .field-label
             = f.label :email
           .field-input
-            = f.email_field :email
+            = f.email_field :email, class: "invalid_data", id: 'user_email'
+            - @emails.each do |email|
+              = f.hidden_field :_email, value: email[:email], class: 'matcher'
           .facebook-btn
             = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
           .content
@@ -25,14 +27,14 @@
             = f.label :password
             %i (英数字8文字以上)
           .field-input
-            = f.password_field :password, autocomplete: "off"
+            = f.password_field :password, autocomplete: "off", id: "check_password", class: "invalid_data valid_password"
         .field
           .field-label
             = f.label :password_confirmation
           .field-input
-            = f.password_field :password_confirmation, autocomplete: "off"
+            = f.password_field :password_confirmation, autocomplete: "off", id: "check_password_confirmation", class: "invalid_data valid_password valid_password_matcher"
         .field
           .actions
-            = f.submit "アカウント作成", class: 'btn'
+            = f.submit "アカウント作成", class: 'btn user_create_btn'
             .login-btn
               = render "devise/shared/links"
