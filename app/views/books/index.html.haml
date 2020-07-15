@@ -21,7 +21,7 @@
       %p Book&nbsp;Shelf
     .nav-left__book-counter
       総登録数：
-      = @books.ids.length
+      = @total
       冊
   .nav-right
     -# .nav-right__favorite お気に入り
@@ -48,12 +48,15 @@
   .book-content__list
     %ul.book-content__list__shelf
       - @books.each do |book|
-        = link_to book_path(book) do
-          %li.book-item-block
+        %li.book-item-block
+          = link_to book_path(book) do
             = image_tag book[:image], alt: "本の画像", class: "book-item-block__image"
             .book-item-block__nav
               .book-item-block__nav__title
                 = book[:title]
               -# .book-item-block__nav__pages 20/1000
 
-.footer Copyright © BOOK Connect. All rights reserved
+.pagenate
+  = paginate @books
+
+.footer Copyright © Book Connect. All rights reserved
