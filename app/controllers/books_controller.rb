@@ -1,9 +1,11 @@
 class BooksController < ApplicationController
   before_action :move_to_index, except: :index
 
+  PER = 15
+
   def index
-    @books = Book.includes(:user).where(user_id: current_user.id)
-    # includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @books = Book.includes(:user).where(user_id: current_user.id).page(params[:page]).per(PER)
+    @total = Book.includes(:user).where(user_id: current_user.id).ids.length
   end
 
   def new

@@ -10,7 +10,4 @@ class Book < ApplicationRecord
   end
 
   belongs_to :user
-  # validates :googlebooksapi_id, uniqueness: true
-  # validates :title, uniqueness: true
-  # validates :image, uniqueness: true
 end

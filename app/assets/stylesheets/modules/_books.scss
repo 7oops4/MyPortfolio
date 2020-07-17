@@ -40,20 +40,12 @@
   }
   &__center{
     width: 50%;
-    border-radius: 20px;
-    color: $side_blue_dark;
-    background-color: snow;
-    margin: 5px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
     i{
       height: 20px;
       width: 20px;
       text-align: center;
       line-height: 30px;
       color: $side_blue_dark;
-      // margin: 10px;
     }
     input{
       height: 100%;
@@ -265,8 +257,9 @@
       white-space: nowrap;
     }
     &__pages{
-      width: 30%;
+      width: 50%;
       font-size: 12px;
+      margin: 0 3px;
     }
   }
   .hidden{
@@ -274,6 +267,13 @@
     width: 0;
   }
   }
+}
+
+.pagenate{
+  color: gray;
+  text-align: center;
+  font-size: 18px;
+  margin: 20px auto;
 }
 
 .footer{
