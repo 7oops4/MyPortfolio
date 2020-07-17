@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
   }
-  # root 'books#show'
   root 'books#index'
   resources :users, only: [:edit, :update]
   namespace :books do

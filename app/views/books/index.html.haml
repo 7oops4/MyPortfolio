@@ -6,8 +6,6 @@
       .header__left__user-info__image
         .fas.fa-user
   .header__center
-    %i.fas.fa-search.fa-lg
-    %input{:type => "text", placeholder: "Search"}
   .header__right
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
     = link_to new_books_search_path do
@@ -24,9 +22,6 @@
       = @total
       冊
   .nav-right
-    -# .nav-right__favorite お気に入り
-    -# .nav-right__genre ジャンル
-    -# .nav-right__author 著者
 
 .book-content
   .bookshelf
@@ -50,11 +45,20 @@
       - @books.each do |book|
         %li.book-item-block
           = link_to book_path(book) do
-            = image_tag book[:image], alt: "本の画像", class: "book-item-block__image"
+            - if book[:image] != ""
+              = image_tag book[:image], alt: "本の画像", class: "book-item-block__image"
+            - else
+              = image_tag "/assets/no_image.jpg", alt: "本の画像", class: "book-item-block__image"
             .book-item-block__nav
               .book-item-block__nav__title
                 = book[:title]
-              -# .book-item-block__nav__pages 20/1000
+              .book-item-block__nav__pages
+                - if book[:already_read_page_count] != nil
+                  - already_read_page_count = book[:already_read_page_count].to_s
+                - else
+                  - already_read_page_count = "0"
+                - total_page_count = book[:total_page_count].to_s
+                = already_read_page_count + "/" + total_page_count
 
 .pagenate
   = paginate @books
